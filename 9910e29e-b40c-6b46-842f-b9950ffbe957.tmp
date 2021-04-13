@@ -1,0 +1,46 @@
+import json
+import deepforge
+import signal
+import sys
+import os
+
+def signal_handler(signum, frame):
+    sig = signal.Signals(signum)
+    print('Received ' + sig.name + '. Exiting.')
+    sys.exit(1)
+
+signal.signal(signal.SIGINT, signal_handler)
+signal.signal(signal.SIGTERM, signal_handler)
+
+
+# Custom serializers can be defined here. For example,
+#
+#  import deepforge
+#  import my_module
+#
+#  deepforge.serialization.register(my_module.my_class, serialize_fn, deserialize_fn)
+#
+# input data
+x = deepforge.serialization.load('', open('./artifacts/x', 'rb')) 
+y = deepforge.serialization.load('', open('./artifacts/y', 'rb')) 
+
+
+
+from operations import Multiply
+
+# main operation code for Multiply
+operation = Multiply()
+print('\n############### Running "Multiply" Operation ############### ')
+result = operation.execute(x,y)
+print('############### "Multiply" Operation Complete! ###############')
+
+
+os.makedirs('outputs/result/', exist_ok=True)
+with open('outputs/result/metadata.json', 'w') as outfile:
+    metadata = {}
+    metadata['type'] = deepforge.serialization.get_full_class_name(result)
+    json.dump(metadata, outfile)
+
+with open('outputs/result/data', 'wb') as outfile:
+    deepforge.serialization.dump(result, outfile)
+

@@ -1,4 +1,4 @@
-describe('CondaUtils', function () {
+describe.skip('CondaUtils', function () {
     const conda = require('../../../utils/conda-utils'),
         expect = require('chai').expect,
         path = require('path'),

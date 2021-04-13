@@ -1,0 +1,44 @@
+{
+  "cmd": "node",
+  "args": [
+    "start.js"
+  ],
+  "outputInterval": 1500,
+  "resultArtifacts": [
+    {
+      "name": "result",
+      "resultPatterns": [
+        "outputs/result"
+      ]
+    },
+    {
+      "name": "stdout",
+      "resultPatterns": [
+        "job_stdout.txt"
+      ]
+    },
+    {
+      "name": "results",
+      "resultPatterns": [
+        "results.json"
+      ]
+    },
+    {
+      "name": "debug-files",
+      "resultPatterns": [
+        "deepforge/serialization.py",
+        "deepforge/__init__.py",
+        "config.json",
+        "start.js",
+        "utils.build.js",
+        "plotly_backend.py",
+        "main.py",
+        "environment.worker.yml",
+        "operations/multiply.py",
+        "operations/__init__.py",
+        "run-debug.js",
+        "input-data.json"
+      ]
+    }
+  ]
+}

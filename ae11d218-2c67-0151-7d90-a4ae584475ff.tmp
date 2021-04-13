@@ -1,0 +1,22 @@
+[
+  [
+    "artifacts/x",
+    {
+      "backend": "gme",
+      "data": "83ffb0583053c8b729d1963788c96def68e4d700"
+    },
+    {
+      "userId": "guest"
+    }
+  ],
+  [
+    "artifacts/y",
+    {
+      "backend": "gme",
+      "data": "83ffb0583053c8b729d1963788c96def68e4d700"
+    },
+    {
+      "userId": "guest"
+    }
+  ]
+]

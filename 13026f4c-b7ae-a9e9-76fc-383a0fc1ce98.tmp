@@ -1,0 +1,4 @@
+class Multiply():
+
+    def execute(self, x, y):
+        return x * y
